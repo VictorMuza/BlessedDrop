@@ -1,15 +1,23 @@
+import "./../styles/Login.css";
 import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
-import { useState, type FormEvent } from 'react';
+import { useState } from 'react';
+// Removed incorrect import
 
 
 
 function Login() {
     const [value, setValue] = useState('');
-    const [] = useState(false);
-    function validateInput(_event: FormEvent<HTMLInputElement>, _validatePattern: boolean): void {
-        throw new Error('Function not implemented.');
-    }
+    const [password, setPassword] = useState('');
+
+    const handleChange = (e: { target: { value: any; }; }) => {
+      const inputValue = e.target.value;
+      const regex = /^[A-Za-z\s]*$/; // só letras e espaços
+  
+      if (regex.test(value) || value === '') {
+        setPassword(inputValue);
+      }
+    };
 
   return (
     
@@ -22,13 +30,16 @@ function Login() {
     </div>
       <br />
       <div className="p-float-label">
-        <InputText id="password" keyfilter={/(?=.*?[#?!@$ %^&*-])/} validateOnly onInput={validateInput} />
+      <InputText value={password}
+        onChange={handleChange} />
         <label htmlFor="password">Password</label>
     </div>
         <br />
-        <a className="m-0">Esqueceu a senha?</a>
     <div className="flex justify-content-end mt-2">
           <button className="p-button p-component p-button-text">Login</button>
+    </div>
+    <div className="flex justify-content-center mt-2">
+    <a className="m-0">Esqueceu a senha?</a>
     </div>
 </Card>
     </div>
