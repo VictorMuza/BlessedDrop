@@ -1,4 +1,4 @@
-import "./../styles/Login.css";
+import "./../styles/Register.css";
 import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
@@ -7,7 +7,7 @@ import { Button } from 'primereact/button';
 
 
 
-function Login() {
+function Register() {
     const [value, setValue] = useState('');
     const [password, setPassword] = useState('');
 
@@ -26,6 +26,11 @@ function Login() {
       <Card title="BlessedDrop" subTitle="BlessedDrop — a cada drop, um passo de fé." className="md:w-25rem">
       
     <div className="p-float-label">
+        <InputText id="email" value={value} onChange={(e) => setValue(e.target.value)} />
+        <label htmlFor="email">Email</label>
+    </div>
+    <br />
+    <div className="p-float-label">
         <InputText id="username" value={value} onChange={(e) => setValue(e.target.value)} />
         <label htmlFor="username">Username</label>
     </div>
@@ -37,14 +42,14 @@ function Login() {
     </div>
         <br />
     <div className="flex justify-content-end mt-2">
-          <Button label="Login" />
+          <Button label="Register" />
     </div>
     <div className="flex justify-content-center mt-2">
-    <a className="m-0">Esqueceu a senha?</a>
+    <a className="m-0">Já tenho uma conta.</a>
     </div>
 </Card>
     </div>
   );
 }
 
-export default Login;
+export default Register;
