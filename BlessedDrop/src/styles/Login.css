@@ -20,6 +20,7 @@ body {
 .card input[type="text"],
 .card input[type="password"] {
     width: 100%;
+    display: block;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -40,4 +41,33 @@ body {
 
 .card button:hover {
     background-color: #0056b3;
+}
+
+input{
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button{
+    width: 90%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+a{
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+    transition: color 0.3s;
 }

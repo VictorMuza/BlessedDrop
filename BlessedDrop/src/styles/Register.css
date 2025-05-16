@@ -7,6 +7,14 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0; /* Optional: Add a background color */
+    font-family: Arial, sans-serif;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: center;
+    background-color: #fdfdfd;
+    color-scheme: light dark;   
 }
 
 .card {
@@ -28,6 +36,12 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #000;
+    background-color: #fff;
+    transition: border-color 0.3s;
 }
 
 .card button {
@@ -39,8 +53,37 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #fff;
+    background-color: #007bff;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    color: #007bff;
 }
 
 .card button:hover {
     background-color: #0056b3;
 }
+
+button{
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+    transition: color 0.3s;
+}   

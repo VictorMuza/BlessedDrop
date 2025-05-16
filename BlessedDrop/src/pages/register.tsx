@@ -19,14 +19,14 @@ function Register() {
         setPassword(inputValue);
       }
     };
-
+    const [email, setEmail] = useState('');
   return (
     
     <div className='flex align-items-center justify-content-center h-screen'>
       <Card title="BlessedDrop" subTitle="BlessedDrop — a cada drop, um passo de fé." className="md:w-25rem">
       
     <div className="p-float-label">
-        <InputText id="email" value={value} onChange={(e) => setValue(e.target.value)} />
+        <InputText id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <label htmlFor="email">Email</label>
     </div>
     <br />
