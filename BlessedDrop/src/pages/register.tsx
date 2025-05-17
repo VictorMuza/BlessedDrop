@@ -3,6 +3,7 @@ import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
 import { useState } from 'react';
 import { Button } from 'primereact/button';
+import { Password } from "primereact/password";
 // Removed incorrect import
 
 
@@ -32,17 +33,15 @@ function Register() {
     <br />
     <div className="p-float-label">
         <InputText id="username" value={value} onChange={(e) => setValue(e.target.value)} />
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">Nome de Usuário</label>
     </div>
       <br />
       <div className="p-float-label">
-      <InputText value={password}
-        onChange={handleChange} />
-        <label htmlFor="password">Password</label>
+      <Password value={password} onChange={handleChange} toggleMask />
     </div>
         <br />
     <div className="flex justify-content-end mt-2">
-          <Button label="Register" />
+          <Button label="Registrar" />
     </div>
     <div className="flex justify-content-center mt-2">
     <a className="m-0">Já tenho uma conta.</a>

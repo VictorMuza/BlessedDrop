@@ -1,8 +1,9 @@
 import "./../styles/Login.css";
 import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
-import { useState } from 'react';
+import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
+import { useState } from 'react';
 // Removed incorrect import
 
 
@@ -27,13 +28,11 @@ function Login() {
       
     <div className="p-float-label">
         <InputText id="username" value={value} onChange={(e) => setValue(e.target.value)} />
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">Nome de Usuário</label>
     </div>
       <br />
       <div className="p-float-label">
-      <InputText value={password}
-        onChange={handleChange} />
-        <label htmlFor="password">Password</label>
+      <Password value={password} onChange={handleChange} toggleMask />
     </div>
         <br />
     <div className="flex justify-content-end mt-2">

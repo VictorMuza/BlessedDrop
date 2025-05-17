@@ -9,6 +9,16 @@ body {
     background-color: #f0f0f0; /* Optional: Add a background color */
 }
 
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 10px;
+}
+
 .card {
     width: 300px;
     padding: 20px;
