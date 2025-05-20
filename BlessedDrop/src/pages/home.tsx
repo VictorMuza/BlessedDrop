@@ -60,6 +60,7 @@ function Home() {
   );
 
   return (
+    <body>
     <div>
       <div className="fixed-toolbar">
         <div className="toolbar-content">
@@ -74,9 +75,11 @@ function Home() {
             right={
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <a href="/produtos">Produtos</a>
-                <a href="/carrinho">Carrinho</a>
+                <a href="/cart">Carrinho</a>
                 <a href="/about">Sobre</a>
-                <Button label="Entrar" className="p-button p-component" />
+                <a href="/login">
+                  <Button label="Logar" className="p-button p-component" />
+                </a>
               </div>
             }
           />
@@ -105,10 +108,24 @@ function Home() {
 
       <footer>
         <div className="footer-content">
-          <p>&copy; 2023 BlessedDrop. Todos os direitos reservados.</p>
+          <p>&copy; 2025 BlessedDrop. Todos os direitos reservados.</p>
+          <p>Desenvolvido por Victor Muza</p>
+          <p>
+            <a href="/privacy-policy">Política de Privacidade</a> | <a href="/terms-of-service">Termos de Serviço</a>
+          </p>
+          <p>
+            <a href="/contact">Contato</a> | <a href="/sitemap">Mapa do Site</a>
+          </p>
+          <p>
+            <a href="/about">Sobre Nós</a> | <a href="/faq">Perguntas Frequentes</a>
+          </p>
+          <p>
+            <a href="/blog">Blog</a> | <a href="/careers">Carreiras</a>
+          </p>
         </div>
       </footer>
     </div>
+    </body>
   );
 }
 

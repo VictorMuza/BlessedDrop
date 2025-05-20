@@ -1,3 +1,9 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 input {
     padding: 0.5rem ;
     border-radius: 4px;
@@ -34,12 +40,15 @@ button {
 }
 
 .cards-container {
-  margin-top: 100px; /* ajuste isso conforme a altura real da sua toolbar */
+  margin-top: 620px; /* ou 100px, dependendo da altura da toolbar + megamenu */
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 2rem 1rem;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+
 
 
 .card {
@@ -57,14 +66,6 @@ button {
   margin-top: 2rem;
 }
 
-.cards-container {
-  margin-top: 120px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2rem 1rem;
-}
-
 .p-card {
   height: 100%;
   display: flex;
@@ -74,4 +75,11 @@ button {
 
 .p-card .p-card-body {
   flex: 1;
+}
+
+footer {
+  background: #f8f9fa;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
 }
