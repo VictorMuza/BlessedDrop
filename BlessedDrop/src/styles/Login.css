@@ -6,7 +6,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0; /* Optional: Add a background color */
+    background-image: url('https://blog.velocita.com.br/wp-content/uploads/2023/10/d.jpg'); 
+    background-size: cover;
 }
 
 label {

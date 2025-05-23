@@ -32,8 +32,14 @@ function Login() {
     </div>
       <br />
       <div className="p-float-label">
-      <Password value={password} onChange={handleChange} toggleMask />
-    </div>
+            <Password 
+              value={password} 
+              onChange={handleChange} 
+              toggleMask={true}
+              id="password"
+            />
+            <label htmlFor="password">Senha</label>
+          </div>
         <br />
     <div className="flex justify-content-end mt-2">
           <Button label="Login" />
