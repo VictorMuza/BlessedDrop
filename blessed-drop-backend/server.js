@@ -10,6 +10,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use("/api", tenisRoutes); // prefixo de API
 
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
+
 app.get("/", (req, res) => {
   res.send("API do BlessedDrop online 🚀");
 });

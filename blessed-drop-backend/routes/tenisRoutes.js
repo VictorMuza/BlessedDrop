@@ -58,4 +58,18 @@ router.put("/tenis/:id", (req, res) => {
   );
 });
 
+router.get("/tenis/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  db.get(`SELECT * FROM tenis WHERE id = ?`, [id], (err, row) => {
+    if (err) {
+      res.status(500).json(err);
+    } else if (row) {
+      res.json(row);
+    } else {
+      res.status(404).json({ error: "Tênis não encontrado" });
+    }
+  });
+});
+
+
 module.exports = router;
