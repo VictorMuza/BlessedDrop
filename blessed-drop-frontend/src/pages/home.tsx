@@ -1,27 +1,9 @@
 import "./../styles/home.css";
 import { Toolbar } from 'primereact/toolbar';
 import { Button } from 'primereact/button';
-import { MegaMenu } from 'primereact/megamenu';
 import { Card } from 'primereact/card';
 
 function Home() {
-  const items = [
-    {
-      label: 'Categorias',
-      items: [
-        [
-          { label: 'Eletrônicos', items: [{ label: 'Celulares' }, { label: 'Notebooks' }] },
-          { label: 'Roupas', items: [{ label: 'Masculino' }, { label: 'Feminino' }] }
-        ]
-      ]
-    },
-    {
-      label: 'Ofertas',
-      items: [
-        [{ label: 'Descontos', items: [{ label: 'Semana' }, { label: 'Mês' }] }]
-      ]
-    }
-  ];
 
   // 🆕 Produtos com imagens individuais
   const produtos = [
@@ -67,7 +49,6 @@ function Home() {
           <Toolbar
             left={
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <img src="/logo.png" alt="Logo" style={{ height: 40 }} />
                 <span style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>BlessedDrop</span>
                 <input type="text" placeholder="Está procurando algo?" className="p-inputtext p-component" />
               </div>
@@ -86,7 +67,6 @@ function Home() {
         </div>
       </div>
 
-      <MegaMenu model={items} breakpoint="960px" />
 
       <div className="cards-container">
         <h2>Produtos em destaque</h2>
