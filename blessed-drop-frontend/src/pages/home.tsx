@@ -43,68 +43,68 @@ function Home() {
 
   return (
     <body>
-    <div>
-      <div className="fixed-toolbar">
-        <div className="toolbar-content">
-          <Toolbar
-            left={
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <span style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>BlessedDrop</span>
-                <input type="text" placeholder="Está procurando algo?" className="p-inputtext p-component" />
-              </div>
-            }
-            right={
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <a href="/produtos">Produtos</a>
-                <a href="/cart">Carrinho</a>
-                <a href="/about">Sobre</a>
-                <a href="/login">
-                  <Button label="Logar" className="p-button p-component" />
-                </a>
-              </div>
-            }
-          />
+      <div>
+        <div className="fixed-toolbar">
+          <div className="toolbar-content">
+            <Toolbar
+              left={
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <span style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>BlessedDrop</span>
+                  <input type="text" placeholder="Está procurando algo?" className="p-inputtext p-component" />
+                </div>
+              }
+              right={
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <a href="/produtos">Produtos</a>
+                  <a href="/cart">Carrinho</a>
+                  <a href="/about">Sobre</a>
+                  <a href="/login">
+                    <Button label="Logar" className="p-button p-component" />
+                  </a>
+                </div>
+              }
+            />
+          </div>
         </div>
+
+
+        <div className="cards-container">
+          <h2>Produtos em destaque</h2>
+          <div className="cards-grid">
+            {produtos.map((produto, index) => (
+              <Card
+                key={index}
+                title={produto.nome}
+                subTitle={produto.descricao}
+                footer={footer}
+                header={getHeader(produto.imagem)}
+                className="md:w-25rem"
+              >
+                <p className="m-0">{produto.descricao}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        <footer>
+          <div className="footer-content">
+            <p>&copy; 2025 BlessedDrop. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Victor Muza</p>
+            <p>
+              <a href="/privacy-policy">Política de Privacidade</a> | <a href="/terms-of-service">Termos de Serviço</a>
+            </p>
+            <p>
+              <a href="/contact">Contato</a> | <a href="/sitemap">Mapa do Site</a>
+            </p>
+            <p>
+              <a href="/about">Sobre Nós</a> | <a href="/faq">Perguntas Frequentes</a>
+            </p>
+            <p>
+              <a href="/blog">Blog</a> | <a href="/careers">Carreiras</a>
+            </p>
+          </div>
+        </footer>
       </div>
-
-
-      <div className="cards-container">
-        <h2>Produtos em destaque</h2>
-        <div className="cards-grid">
-          {produtos.map((produto, index) => (
-            <Card
-              key={index}
-              title={produto.nome}
-              subTitle={produto.descricao}
-              footer={footer}
-              header={getHeader(produto.imagem)}
-              className="md:w-25rem"
-            >
-              <p className="m-0">{produto.descricao}</p>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      <footer>
-        <div className="footer-content">
-          <p>&copy; 2025 BlessedDrop. Todos os direitos reservados.</p>
-          <p>Desenvolvido por Victor Muza</p>
-          <p>
-            <a href="/privacy-policy">Política de Privacidade</a> | <a href="/terms-of-service">Termos de Serviço</a>
-          </p>
-          <p>
-            <a href="/contact">Contato</a> | <a href="/sitemap">Mapa do Site</a>
-          </p>
-          <p>
-            <a href="/about">Sobre Nós</a> | <a href="/faq">Perguntas Frequentes</a>
-          </p>
-          <p>
-            <a href="/blog">Blog</a> | <a href="/careers">Carreiras</a>
-          </p>
-        </div>
-      </footer>
-    </div>
     </body>
   );
 }

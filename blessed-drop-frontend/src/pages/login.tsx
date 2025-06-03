@@ -9,45 +9,54 @@ import { useState } from 'react';
 
 
 function Login() {
-    const [value, setValue] = useState('');
-    const [password, setPassword] = useState('');
+  const [value, setValue] = useState('');
+  const [password, setPassword] = useState('');
 
-    const handleChange = (e: { target: { value: any; }; }) => {
-      const inputValue = e.target.value;
-      const regex = /^[A-Za-z\s]*$/; // só letras e espaços
-  
-      if (regex.test(value) || value === '') {
-        setPassword(inputValue);
-      }
-    };
+  const handleChange = (e: { target: { value: any; }; }) => {
+    const inputValue = e.target.value;
+    const regex = /^[A-Za-z\s]*$/; // só letras e espaços
+
+    if (regex.test(value) || value === '') {
+      setPassword(inputValue);
+    }
+  };
 
   return (
-    
-    <div className='flex align-items-center justify-content-center h-screen'>
-      <Card title="BlessedDrop" subTitle="BlessedDrop — a cada drop, um passo de fé." className="md:w-25rem">
-      
-    <div className="p-float-label">
-        <InputText id="username" value={value} onChange={(e) => setValue(e.target.value)} />
-        <label htmlFor="username">Nome de Usuário</label>
-    </div>
-      <br />
-      <div className="p-float-label">
-            <Password 
-              value={password} 
-              onChange={handleChange} 
-              toggleMask={true}
-              id="password"
-            />
-            <label htmlFor="password">Senha</label>
-          </div>
+    <div className='login-container'>
+      <Card
+        title="BlessedDrop"
+        subTitle="BlessedDrop — a cada drop, um passo de fé."
+        className="custom-card"
+      >
+        <div className="p-float-label">
+          <InputText
+            id="username"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+          <label htmlFor="username">Nome de Usuário</label>
+        </div>
+
         <br />
-    <div className="flex justify-content-end mt-2">
-          <Button label="Login" />
-    </div>
-    <div className="flex justify-content-center mt-2">
-    <a className="m-0">Esqueceu a senha?</a>
-    </div>
-</Card>
+
+        <div className="p-float-label">
+          <Password
+            id="password"
+            value={password}
+            onChange={handleChange}
+            toggleMask
+          />
+          <label htmlFor="password">Senha</label>
+        </div>
+
+        <br />
+
+        <Button label="Login" className="w-full" />
+
+        <div className="flex justify-content-center mt-3">
+          <a href="#">Esqueceu a senha?</a>
+        </div>
+      </Card>
     </div>
   );
 }

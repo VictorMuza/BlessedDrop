@@ -1,4 +1,3 @@
-
 import "./../styles/Register.css";
 import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
@@ -6,83 +5,67 @@ import { useState } from 'react';
 import { Button } from 'primereact/button';
 import { Password } from "primereact/password";
 
-// Função principal do componente Register
 function Register() {
-    const [value, setValue] = useState('');
-    const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
-    // Função para tratar a mudança no campo de senha
-    const handleChange = (e: { target: { value: any; }; }) => {
-      const inputValue = e.target.value;
-      const regex = /^[A-Za-z\s]*$/; // Permite apenas letras e espaços
-  
-      // Se o valor digitado for válido ou vazio, atualiza o estado da senha
-      if (regex.test(value) || value === '') {
-        setPassword(inputValue);
-      }
-    };
+  // Função para tratar a mudança no campo de senha (letras e espaços)
+  const handlePasswordChange = (e: { target: { value: string } }) => {
+    const inputValue = e.target.value;
+    const regex = /^[A-Za-z\s]*$/;
 
-    const [email, setEmail] = useState('');
+    if (regex.test(inputValue) || inputValue === '') {
+      setPassword(inputValue);
+    }
+  };
 
-    return (
-      <div className='flex align-items-center justify-content-center h-screen'>
+  return (
+    <div className="flex align-items-center justify-content-center h-screen">
+      <Card
+        title="BlessedDrop"
+        subTitle="BlessedDrop — a cada drop, um passo de fé."
+        className="custom-card"
+      >
+        <div className="p-float-label mb-3">
+          <InputText
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="bd-input"
+          />
+          <label htmlFor="email">Email</label>
+        </div>
 
-        {/* Card estilizado com título e subtítulo */}
-        <Card 
-          title="BlessedDrop" 
-          subTitle="BlessedDrop — a cada drop, um passo de fé."
-        >
+        <div className="p-float-label mb-3">
+          <InputText
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="bd-input"
+          />
+          <label htmlFor="username">Nome de Usuário</label>
+        </div>
 
-          {/* Campo de input para email com label flutuante */}
-          <div className="p-float-label">
-            <InputText 
-              id="email" 
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
-            />
-            <label htmlFor="email">Email</label>
-          </div>
+        <div className="p-float-label mb-3">
+          <Password
+            id="password"
+            value={password}
+            onChange={handlePasswordChange}
+            toggleMask={true}
+            className="bd-input"
+          />
+          <label htmlFor="password">Senha</label>
+        </div>
 
-          <br />
+        <Button label="Registrar" className="custom-button mb-2" />
 
-          {/* Campo de input para nome de usuário */}
-          <div className="p-float-label">
-            <InputText 
-              id="username" 
-              value={value} 
-              onChange={(e) => setValue(e.target.value)} 
-            />
-            <label htmlFor="username">Nome de Usuário</label>
-          </div>
-
-          <br />
-
-          {/* Campo de input para senha com máscara e botão para exibir/esconder senha */}
-          <div className="p-float-label">
-            <Password 
-              value={password} 
-              onChange={handleChange} 
-              toggleMask={true}
-              id="password"
-            />
-            <label htmlFor="password">Senha</label>
-          </div>
-
-          <br />
-
-          <div className="flex justify-content-end mt-2">
-            <Button label="Registrar" />
-          </div>
-
-          <div className="flex justify-content-center mt-2">
-            <a className="m-0">Já tenho uma conta.</a>
-          </div>
-        </Card>
-
-        
-        
-      </div>
-    );
+        <div className="text-center mt-2">
+          <a href="#">Já tenho uma conta.</a>
+        </div>
+      </Card>
+    </div>
+  );
 }
 
 export default Register;

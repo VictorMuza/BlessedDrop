@@ -12,26 +12,26 @@ const AdminCadastrar: React.FC = () => {
   const [imagem, setImagem] = useState("");
   const [descricao, setDescricao] = useState("");
 
-const cadastrarTenis = () => {
-  console.log({ nome, preco, imagem, descricao }); // Verifica se os dados estão certinhos
-  if (nome && preco && imagem) {
-    api
-      .post("/tenis", { nome, preco, imagem, descricao })
-      .then(() => {
-        alert("Tênis cadastrado com sucesso!");
-        // Limpa campos
-        setNome("");
-        setPreco(null);
-        setImagem("");
-        setDescricao("");
-      })
-      .catch((err) => {
-        console.error("Erro ao cadastrar:", err);
-      });
-  } else {
-    alert("Preencha todos os campos obrigatórios.");
-  }
-};
+  const cadastrarTenis = () => {
+    console.log({ nome, preco, imagem, descricao }); // Verifica se os dados estão certinhos
+    if (nome && preco && imagem) {
+      api
+        .post("/tenis", { nome, preco, imagem, descricao })
+        .then(() => {
+          alert("Tênis cadastrado com sucesso!");
+          // Limpa campos
+          setNome("");
+          setPreco(null);
+          setImagem("");
+          setDescricao("");
+        })
+        .catch((err) => {
+          console.error("Erro ao cadastrar:", err);
+        });
+    } else {
+      alert("Preencha todos os campos obrigatórios.");
+    }
+  };
 
 
   return (

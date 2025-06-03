@@ -21,16 +21,16 @@ const DetalheTenis: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-  console.log("ID recebido:", id);
-  api.get<Tenis>(`/tenis/${id}`)
-    .then((response) => {
-      console.log("Tênis carregado:", response.data);
-      setTenis(response.data);
-    })
-    .catch((error) => {
-      console.error("Erro ao carregar tênis:", error);
-    });
-}, [id]);
+    console.log("ID recebido:", id);
+    api.get<Tenis>(`/tenis/${id}`)
+      .then((response) => {
+        console.log("Tênis carregado:", response.data);
+        setTenis(response.data);
+      })
+      .catch((error) => {
+        console.error("Erro ao carregar tênis:", error);
+      });
+  }, [id]);
 
   if (!tenis) {
     return <p className="p-4">Carregando...</p>;

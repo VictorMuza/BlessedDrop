@@ -2,10 +2,12 @@
   width: 230px;
   height: 360px;
 }
+
 .card-tenis-img {
   height: 150px;
   object-fit: cover;
 }
+
 .card-tenis-desc {
   overflow: hidden;
   text-overflow: ellipsis;

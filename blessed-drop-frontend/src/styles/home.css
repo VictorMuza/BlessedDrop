@@ -1,25 +1,26 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
+
 input {
-    padding: 0.5rem ;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    width: 300px;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 300px;
 }
 
 button {
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .fixed-toolbar {
@@ -30,7 +31,7 @@ button {
   width: 100%;
   background: white;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .toolbar-content {
@@ -40,7 +41,8 @@ button {
 }
 
 .cards-container {
-  margin-top: 230px; /* ou 100px, dependendo da altura da toolbar + megamenu */
+  margin-top: 320px;
+  /* ou 100px, dependendo da altura da toolbar + megamenu */
   max-width: 2000px;
   margin-left: auto;
   margin-right: auto;
@@ -56,7 +58,7 @@ button {
   border: 1px solid #eee;
   border-radius: 4px;
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cards-grid {
